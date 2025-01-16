@@ -1,0 +1,36 @@
+﻿
+@model dynamic
+@{
+    ViewData["Title"] = "Katılımcı Kaydı";
+}
+
+<h2>Katılımcı Kaydı</h2>
+
+<form asp-action="Register" method="post">
+    <div class="form-group">
+        <label for="Name">Adınız:</label>
+        <input type="text" name="Name" id="Name" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label for="EventID">Katılacağınız Etkinlik:</label>
+        <select name="EventID" id="EventID" class="form-control">
+            <option value="">Etkinlik Seçin</option>
+            @foreach (var item in ViewData["Events"] as List<SelectListItem>)
+            {
+                <option value="@item.Value">@item.Text</option>
+            }
+        </select>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Kaydet</button>
+</form>
+
+
+<form asp-action="DeleteOldParticipants" method="post">
+    <button type="submit" class="btn btn-danger">Eski Katılımcıları Sil</button>
+</form>
+
+
+<!-- Sadece listeleme sayfasına yönlendiren buton -->
+<a asp-action="List" class="btn btn-success mt-3">Katılımcı Listesine Git</a>

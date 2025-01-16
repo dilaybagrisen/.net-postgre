@@ -1,0 +1,30 @@
+﻿@model IEnumerable<SporEtkinlikleriYonetimSistemi.Models.PastEventsViewModel>
+
+<h1>Geçmiş Etkinlikler</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Etkinlik Başlığı</th>
+            <th>Tanım</th>
+            <th>Yer</th>
+            <th>Başlangıç Tarihi</th>
+            <th>Bitiş Tarihi</th>
+            <th>Organizatör</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var eventItem in Model)
+        {
+            <tr>
+                <td>@eventItem.eventtitle</td>
+                <td>@eventItem.eventdescription</td>
+                <td>@eventItem.Location</td>
+                <td>@eventItem.StartDate.ToShortDateString()</td>
+                <td>@eventItem.EndDate.ToShortDateString()</td>
+                <td>@eventItem.organizername</td>
+            </tr>
+        }
+    </tbody>
+</table>
+

@@ -1,0 +1,26 @@
+﻿@model IEnumerable<SporEtkinlikleriYonetimSistemi.Models.EventsByOrganizerViewModel>
+
+<h1>Events By Organizer</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Organizer Name</th>
+            <th>Event Title</th>
+            <th>Start Date</th>
+            <th>End Date</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.organizername</td>
+                <td>@item.eventtitle</td>
+                <td>@item.StartDate.ToShortDateString()</td>
+                <td>@item.EndDate.ToShortDateString()</td>
+            </tr>
+        }
+    </tbody>
+</table>
+

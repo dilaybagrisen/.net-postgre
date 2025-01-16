@@ -1,0 +1,106 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+@section Styles {
+    <style>
+        .welcome-message {
+            text-align: center;
+            margin: 50px;
+            font-family: Arial, sans-serif;
+            font-size: 24px;
+            color: #ff0000;
+        }
+
+        .participant-section {
+            margin-top: 50px;
+            padding: 20px;
+            border: 2px dashed #007bff;
+            background-color: #f9f9f9;
+        }
+    </style>
+}
+
+<div class="container mt-4">
+    <div class="row">
+        <!-- Hoş Geldiniz Mesajı -->
+        <div class="col-md-8 offset-md-2 text-center">
+            <h1>Hoş Geldiniz!</h1>
+            <p>Spor Etkinlikleri Yönetim Sistemi'ne hoş geldiniz. Bu sistemle etkinlik oluşturabilir, düzenleyebilir ve katılabilirsiniz.</p>
+        </div>
+    </div>
+
+    <!-- Üçlü Kartlar -->
+    <div class="row mt-5">
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Etkinlikler</h5>
+                    <p class="card-text">Etkinlikleri görüntüleyin ve etkinlik ekleyin.</p>
+                    <a href="/Events" class="btn btn-primary">Git</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Etkinlik Sahipleri</h5>
+                    <p class="card-text">Etkinlik sahibi bilgilerini düzenleyin veya ekleyin.</p>
+                    <a href="/Users" class="btn btn-primary">Git</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Mekanlar</h5>
+                    <p class="card-text">Mekanları yönetin ve düzenleyin.</p>
+                    <a href="/Venues" class="btn btn-primary">Git</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Katılımcı Kayıt Bölümü -->
+    <div class="participant-section text-center mt-5">
+        <h2>Etkinliklerimize Katılın!</h2>
+        <p>Eğer Spor Etkinliklerimize katılmak istiyorsanız, lütfen aşağıdaki bağlantıya tıklayarak kayıt olun ve katılmak istediğiniz etkinliği seçin.</p>
+        @await Html.PartialAsync("ParticipantLink")
+    </div>
+</div>
+
+
+<!-- En Popüler Etkinlikler Butonu -->
+<div class="text-center mt-5">
+    <a href="/Events/TopEvents" class="btn btn-warning btn-lg">En Popüler Etkinlikler</a>
+</div>
+
+
+<!-- Geçmiş Etkinlikler Butonu -->
+<a href="/Events/PastEvents" class="btn btn-success btn-lg mt-3">Geçmiş Etkinlikler</a>
+</div>
+
+<div class="container">
+    <h1></h1>
+    <!--burda yaklaşan etkinkikleri gösteriyoruz -->
+    
+    @await Component.InvokeAsync("UpcomingEvents")
+</div>
+
+
+<!-- Gelecek Etkinlikler Butonu -->
+<div class="text-center mt-4">
+    <a href="/Events/UpcomingEvents" class="btn btn-primary btn-lg">Gelecek Etkinlikler</a>
+</div>
+
+<!-- Yeni Buton -->
+<a href="/Events/EventsByOrganizer" class="btn btn-primary btn-lg mt-3">Etkinlikleri Organizasyona Göre Görüntüle</a>
+</div>
+
+<!-- Etkinlik Sürelerini Görüntüle Butonu -->
+<a href="/Events/EventDurationStats" class="btn btn-info btn-lg mt-3">Etkinlik Sürelerini Görüntüle</a>
+
+
+
+
+

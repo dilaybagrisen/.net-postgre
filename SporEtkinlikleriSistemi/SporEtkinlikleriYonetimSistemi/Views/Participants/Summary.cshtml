@@ -1,0 +1,7 @@
+﻿@model SporEtkinlikleriYonetimSistemi.Models.Participant
+
+<h1>Kayıt Özeti</h1>
+
+<p><strong>Katılımcı Adı:</strong> @Model.Name</p>
+<p><strong>Seçilen Etkinlik:</strong> @Model.Event.Title</p>
+<p><strong>Etkinlik Tarihi:</strong> @Model.Event.StartDate.ToShortDateString() - @Model.Event.EndDate.ToShortDateString()</p>

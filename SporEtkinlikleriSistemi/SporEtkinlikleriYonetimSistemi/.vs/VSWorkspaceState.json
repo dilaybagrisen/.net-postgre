@@ -1,0 +1,16 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\Controllers",
+    "\\Data",
+    "\\Migrations",
+    "\\Models",
+    "\\Properties",
+    "\\Views",
+    "\\Views\\EventParticipants",
+    "\\Views\\EventSchedules",
+    "\\Views\\Home"
+  ],
+  "SelectedNode": "\\SporEtkinlikleriYonetimSistemi.csproj",
+  "PreviewInSolutionExplorer": false
+}

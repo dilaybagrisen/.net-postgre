@@ -1,0 +1,33 @@
+﻿@model IEnumerable<SporEtkinlikleriYonetimSistemi.Models.ParticipantWithEventViewModel>
+
+
+
+@using SporEtkinlikleriYonetimSistemi.Models
+
+
+
+<h1>Katılımcı Listesi</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Katılımcı ID</th>
+            <th>Katılımcı Adı</th>
+            <th>Etkinlik Başlığı</th>
+            <th>Başlangıç Tarihi</th>
+            <th>Bitiş Tarihi</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.id</td>
+                <td>@item.name</td>
+                <td>@item.eventtitle</td>
+                <td>@item.eventstartdate</td>
+                <td>@item.eventenddate</td>
+            </tr>
+        }
+    </tbody>
+</table>
